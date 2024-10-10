@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 import com.revrobotics.CANSparkMax;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 
@@ -19,8 +18,12 @@ public class DriveSubsystem extends SubsystemBase {
     CANSparkMax rightFront = new CANSparkMax(frc.robot.RobotMap.DrivetrainConstants.fRightMotorID, MotorType.kBrushed);
     CANSparkMax rightRear = new CANSparkMax(frc.robot.RobotMap.DrivetrainConstants.bRightMotorID, MotorType.kBrushed);
     //--------
+    
+    leftFront.setSmartCurrentLimit(kCurrentLimit);
+    leftRear.setSmartCurrentLimit(kCurrentLimit);
+    rightFront.setSmartCurrentLimit(kCurrentLimit);
+    rightRear.setSmartCurrentLimit(kCurrentLimit);
     //
     public static void driveTrain() {
-        
     } 
 }
