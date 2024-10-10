@@ -4,19 +4,23 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-import static frc.robot.RobotMap.DrivetrainConstants;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import com.revrobotics.CANSparkLowLevel.MotorType;
 
-import java.sql.Timestamp;
 
 public class DriveSubsystem extends SubsystemBase {
-    //intitalizing CAN sparks to motors
-    CANSparkMax leftFront = new CANSparkMax(fLeftMotorID, MotorType.kBrushed);
-    CANSparkMax leftRear = new CANSparkMax(fRightMotorID, MotorType.kBrushed);
-    CANSparkMax rightFront = new CANSparkMax(bLeftMotorID, MotorType.kBrushed);
-    CANSparkMax rightRear = new CANSparkMax(bRightMotorID, MotorType.kBrushed);
 
-    public driveTrain() {
+    //intitalizing CAN sparks to motors
+    //-------
+    //Left Side Drive
+    CANSparkMax leftFront = new CANSparkMax(frc.robot.RobotMap.DrivetrainConstants.fLeftMotorID, MotorType.kBrushed);
+    CANSparkMax leftRear = new CANSparkMax(frc.robot.RobotMap.DrivetrainConstants.bLeftMotorID, MotorType.kBrushed);
+    //Right Side Drive
+    CANSparkMax rightFront = new CANSparkMax(frc.robot.RobotMap.DrivetrainConstants.fRightMotorID, MotorType.kBrushed);
+    CANSparkMax rightRear = new CANSparkMax(frc.robot.RobotMap.DrivetrainConstants.bRightMotorID, MotorType.kBrushed);
+    //--------
+    //
+    public static void driveTrain() {
         
-    }
+    } 
 }
