@@ -21,6 +21,6 @@ public final class RobotMap {
         public static final int bRightMotorID = 4;
         //----------------
         //Current limiter for drive motors
-        public static final int kCurrentLimit = 60;
+        public static final int CurrentLimit = 60;
     }
 }
