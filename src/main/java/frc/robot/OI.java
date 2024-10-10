@@ -20,15 +20,7 @@ public class OI {
         manipController = new XboxController(1);
 
 
-        private double getDriveLeftX(){
-            return driveController.getRawAxis(0);
-        }
 
-        private double getDriveLeftY(){
-            return -driveController.getRawAxis(1);
-        }
-    }
-    }
     }
 
 
