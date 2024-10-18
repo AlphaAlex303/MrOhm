@@ -1,6 +1,9 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
+import frc.subsystems.DriveSubsystem.*;
+import frc.command.*;
+import frc.robot.*;
 
 public class OI {
 
@@ -9,6 +12,7 @@ public class OI {
 
     public OI() {
         initControllers();
+
 
     }
 
@@ -19,9 +23,21 @@ public class OI {
         driveController = new XboxController(0);
         manipController = new XboxController(1);
 
-
+        
 
     }
+    private double getDriveLeftY() {
+        return driveController.getRawAxis(1);
+
+        
+    }
+    private double getDriveRightY() {
+        return driveController.getRawAxis(4);
+        
+    }
+    public static Drivetrain Drivetrain;
+
+    
 
 
 }
