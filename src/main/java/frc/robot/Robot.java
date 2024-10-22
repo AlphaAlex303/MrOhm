@@ -1,6 +1,4 @@
 package frc.robot;
-
-
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.*;
@@ -52,7 +50,6 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopPeriodic() {
-        drive(()->getDriveLeftY(),()->getDriveRightY());
     }
 
     /**

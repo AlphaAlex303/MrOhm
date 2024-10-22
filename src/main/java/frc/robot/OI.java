@@ -1,18 +1,23 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
-import frc.subsystems.DriveSubsystem.*;
-import frc.command.*;
-import frc.robot.*;
+import edu.wpi.first.wpilibj2.command.RunCommand;
+import frc.subsystems.DriveSubsystem;
 
 public class OI {
 
-
+    private final DriveSubsystem m_drivetrain = new DriveSubsystem();
     public XboxController driveController, manipController;
 
+    
     public OI() {
         initControllers();
-
+        m_drivetrain.setDefaultCommand(
+            new RunCommand(
+                () ->
+                    m_drivetrain.arcadeDrive(
+                        getDriveLeftY(), getDriveLeftX()),
+                m_drivetrain));
 
     }
 
@@ -31,11 +36,11 @@ public class OI {
 
         
     }
-    private double getDriveRightY() {
-        return driveController.getRawAxis(4);
+    private double getDriveLeftX() {
+        return driveController.getRawAxis(2);
         
     }
-    public static Drivetrain Drivetrain;
+    
 
     
 
