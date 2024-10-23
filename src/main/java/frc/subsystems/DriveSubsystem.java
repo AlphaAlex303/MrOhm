@@ -13,7 +13,6 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import static frc.robot.RobotMap.DrivetrainConstants.*;
 //-----------
 
-
 //Public Class for Drive
 public class DriveSubsystem extends SubsystemBase {
     //Inititalizing CAN Sparks and giving them names

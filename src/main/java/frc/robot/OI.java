@@ -13,14 +13,12 @@ public class OI {
     
     public OI() {
         initControllers();
-        //UNCOMMENT FOR TANKDRIVE
         //drivetrain drive control
-        //COMMENT OUT FOR TANKDRIVE
         m_drivetrain.setDefaultCommand(
             new RunCommand(
                 () ->
-                    //m_drivetrain.tankDrive(
-                    m_drivetrain.arcadeDrive(
+                    //(UNCOMMENT FOR TANKDRIVE) m_drivetrain.tankDrive(
+                    m_drivetrain.arcadeDrive( //(COMMENT FOR TANKDRIVE)
                         getDriveLeftY(), getDriveLeftX()),
                 m_drivetrain));
 
@@ -52,10 +50,8 @@ public class OI {
     }
     //gets the stick values
     private double getDriveLeftX() {
-        //COMMENT OUT FOR TANKDRIVE
+        //Replace the axis with "4" to use tank drive
         return driveController.getRawAxis(0);
-        //---UNCOMMENT FOR TANKDRIVE
-        //return driveController.getRawAxis(4);
         
     }
     
