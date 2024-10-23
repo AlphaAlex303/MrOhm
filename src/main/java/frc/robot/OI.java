@@ -19,7 +19,6 @@ public class OI {
                 () ->
                     //m_drivetrain.tankDrive(
                     m_drivetrain.arcadeDrive(
-
                         getDriveLeftY(), getDriveLeftX()),
                 m_drivetrain));
 
@@ -36,6 +35,14 @@ public class OI {
 
     }
     //gets the stick values
+    //----------
+    //—Left stick
+    //X-axis: 0
+    //Y-axis: 1 and 2
+    //—Right stick
+    //X-axis: 3
+    //Y-axis: 4 and 5
+    //----------
     private double getDriveLeftY() {
         return driveController.getRawAxis(1);
 
@@ -43,7 +50,7 @@ public class OI {
     }
     //gets the stick values
     private double getDriveLeftX() {
-        return driveController.getRawAxis(2);
+        return driveController.getRawAxis(0);
         //return driveController.getRawAxis(4);
         
     }

@@ -16,13 +16,13 @@ import static frc.robot.RobotMap.DrivetrainConstants.*;
 
 //Public Class for Drive
 public class DriveSubsystem extends SubsystemBase {
-    //Inititalizing CAN Sparks
+    //Inititalizing CAN Sparks and giving them names
     private CANSparkMax leftFront;
     private CANSparkMax leftRear;
     private CANSparkMax rightFront;
     private CANSparkMax rightRear;
 
-
+    //makes the drive train a thing
     DifferentialDrive m_drivetrain;
 
 
