@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 //Adds the motor controls
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
-import java.util.function.Supplier;
 
 
 //adds the motor IDs
@@ -49,23 +48,23 @@ public class DriveSubsystem extends SubsystemBase {
         rightRear.follow(rightRear);
         
         //Makes both sides drive correctly
-        leftFront.setInverted(true);
-        rightFront.setInverted(false);
+        //leftFront.setInverted(true);
+        //rightFront.setInverted(false);
 
 
         
     }
-    // Grabs values and puts it in
+    //Drive options
 
-
+    //Uses the built in arcade drive to use arcade drive (One stick control)
     public void arcadeDrive(double speed, double rotation) {
         m_drivetrain.arcadeDrive(speed, rotation);
     }
 
-
-    public void tankDrive(Supplier<Double> leftSpeed, Supplier<Double>rightSpeed){
-        this.leftFront.set(leftSpeed.get());
-        this.rightFront.set(rightSpeed.get());
+    //Uses custom tank drive (Lawnmower) (Duel joystick)
+    public void tankDrive(double leftSpeed, double rightSpeed){
+        this.leftFront.set(leftSpeed);
+        this.rightFront.set(rightSpeed);
     }
     // Perodic func
     @Override

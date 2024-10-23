@@ -5,17 +5,21 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc.subsystems.DriveSubsystem;
 
 public class OI {
-
+    //makes the drivetrain and object
     private final DriveSubsystem m_drivetrain = new DriveSubsystem();
+    //makes controler options
     public XboxController driveController, manipController;
 
     
     public OI() {
         initControllers();
+        //drivetrain drive control
         m_drivetrain.setDefaultCommand(
             new RunCommand(
                 () ->
+                    //m_drivetrain.tankDrive(
                     m_drivetrain.arcadeDrive(
+
                         getDriveLeftY(), getDriveLeftX()),
                 m_drivetrain));
 
@@ -31,13 +35,16 @@ public class OI {
         
 
     }
+    //gets the stick values
     private double getDriveLeftY() {
         return driveController.getRawAxis(1);
 
         
     }
+    //gets the stick values
     private double getDriveLeftX() {
         return driveController.getRawAxis(2);
+        //return driveController.getRawAxis(4);
         
     }
     
