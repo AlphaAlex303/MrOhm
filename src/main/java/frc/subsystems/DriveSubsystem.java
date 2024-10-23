@@ -48,6 +48,7 @@ public class DriveSubsystem extends SubsystemBase {
         rightRear.follow(rightRear);
         
         //Makes both sides drive correctly
+        //---UNCOMENT FOR TANK DRIVE---
         //leftFront.setInverted(true);
         //rightFront.setInverted(false);
 
@@ -61,7 +62,7 @@ public class DriveSubsystem extends SubsystemBase {
         m_drivetrain.arcadeDrive(speed, rotation);
     }
 
-    //Uses custom tank drive (Lawnmower) (Duel joystick)
+    //Uses tank drive (Lawnmower) (Duel joystick)
     public void tankDrive(double leftSpeed, double rightSpeed){
         this.leftFront.set(leftSpeed);
         this.rightFront.set(rightSpeed);
